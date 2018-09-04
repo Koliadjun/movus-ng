@@ -1,0 +1,11 @@
+<p>
+  create-article works!
+</p>
+<input type="text" [(ngModel)]="article.title" >
+<br>
+<div *ngIf="errors && errors.title">title required</div>
+<textarea [(ngModel)]="article.text"></textarea>
+<br>
+<input type="file"  [(ngModel)]="article.img>
+<div *ngIf="errors && errors.text">text required</div>
+<button (click)="submit()">save</button>

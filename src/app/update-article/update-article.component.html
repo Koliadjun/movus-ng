@@ -1,0 +1,10 @@
+<p>
+  update-article works!
+</p>
+<div  *ngIf=article>
+  <input type="text" [(ngModel)]="article.title" value={{article.title}}>
+  <br>
+  <textarea [(ngModel)]="article.text" value={{article.text}}></textarea>
+  <br>
+  <button (click)="update(article)">update</button>
+</div>

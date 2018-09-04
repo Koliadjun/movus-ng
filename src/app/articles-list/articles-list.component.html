@@ -1,0 +1,8 @@
+
+<div *ngIf="articlesLoading" class="loading">
+  Loading...
+</div>
+<div *ngFor="let item of articles" class='Articles'>
+  <div class="articles_title">{{item.title}}</div>
+  <button (click)=delete(item)>Delete</button>
+</div>
