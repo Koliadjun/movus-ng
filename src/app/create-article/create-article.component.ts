@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { ArticlesService } from '../articles.service';
 import { Router } from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-create-article',
@@ -31,6 +32,18 @@ export class CreateArticleComponent implements OnInit {
         this.errors = error.error
       }
     )
+  }
+  onFileChange(event) {
+    if(event.target.files.length > 0) {
+      let file = event.target.files[0];
+      console.log(file);
+    }
+  }
+  private prepareSave(): any {
+    let input = new FormData();
+    input.append('name', this.form.get('name').value);
+    input.append('avatar', this.form.get('avatar').value);
+    return input;
   }
   ngOnInit() {
    

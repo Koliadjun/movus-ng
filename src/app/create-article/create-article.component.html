@@ -6,6 +6,6 @@
 <div *ngIf="errors && errors.title">title required</div>
 <textarea [(ngModel)]="article.text"></textarea>
 <br>
-<input type="file"  [(ngModel)]="article.img>
+<input type="file"  (change)="onFileChange($event)">
 <div *ngIf="errors && errors.text">text required</div>
 <button (click)="submit()">save</button>
